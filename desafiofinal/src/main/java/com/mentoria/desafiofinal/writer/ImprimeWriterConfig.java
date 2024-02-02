@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Configuration
 public class ImprimeWriterConfig {
@@ -18,7 +19,10 @@ public class ImprimeWriterConfig {
 
     @Bean
     public ItemWriter<Map<String, Calculo>> imprimeWriter() {
+        AtomicInteger count = new AtomicInteger(0);
         return items -> {
+
+            System.out.println(count.incrementAndGet());
             if (!items.isEmpty()) {
                 System.out.println(mapa.getMapa());
             }

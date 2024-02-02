@@ -20,7 +20,6 @@ public class BatchConfig {
                                        Step processarArquivoStep) {
         return new JobBuilder("processarArquivoDesafio", jobRepository)
                 .start(processarArquivoStep)
-                .incrementer(new RunIdIncrementer())
                 .build();
     }
 

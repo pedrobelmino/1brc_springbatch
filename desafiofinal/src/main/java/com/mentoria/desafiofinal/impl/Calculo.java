@@ -1,7 +1,10 @@
 package com.mentoria.desafiofinal.impl;
 
+import lombok.Data;
+
 import java.text.DecimalFormat;
 
+@Data
 public class Calculo {
 
     Double numMin, numMax, media;
@@ -13,21 +16,6 @@ public class Calculo {
         return getNumMin() + "/" + getMedia() + "/" + getNumMax();
     }
 
-    public Double getNumMin() {
-        return this.numMin;
-    }
-
-    public void setNumMin(Double numMin) {
-        this.numMin = numMin;
-    }
-
-    public Double getNumMax() {
-        return this.numMax;
-    }
-
-    public void setNumMax(Double numMax) {
-        this.numMax = numMax;
-    }
 
     public Double getMedia() {
         this.media = (this.numMax + this.numMin) / 2.0;

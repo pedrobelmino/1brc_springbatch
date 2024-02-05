@@ -22,18 +22,15 @@ public class ProcessCalculoMediaConfig {
 
         return conteudoLinha -> {
 
-            String chave = conteudoLinha.getNomeCidade();
-            Double novoValor = conteudoLinha.getTemperatura();
-
             if (!mapa.getMapa().containsKey(conteudoLinha.getNomeCidade())) {
                 Calculo novoCalculo = new Calculo();
-                novoCalculo.setNumMin(novoValor);
-                novoCalculo.setNumMax(novoValor);
-                mapa.adicionarAoMapa(chave, novoCalculo);
+                novoCalculo.setNumMin(conteudoLinha.getTemperatura());
+                novoCalculo.setNumMax(conteudoLinha.getTemperatura());
+                mapa.adicionarAoMapa(conteudoLinha.getNomeCidade(), novoCalculo);
             } else {
-                Calculo calculo = mapa.getMapa().get(chave);
-                calculo.setNumMax(Math.max(novoValor, calculo.getNumMax()));
-                calculo.setNumMin(Math.min(novoValor, calculo.getNumMin()));
+                Calculo calculo = mapa.getMapa().get(conteudoLinha.getNomeCidade());
+                calculo.setNumMax(Math.max(conteudoLinha.getTemperatura(), calculo.getNumMax()));
+                calculo.setNumMin(Math.min(conteudoLinha.getTemperatura(), calculo.getNumMin()));
             }
 
             return mapa.getMapa();

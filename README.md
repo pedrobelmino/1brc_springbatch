@@ -12,9 +12,9 @@
 
 #### "O Desafio de Um Bilhão de Linhas - Uma exploração divertida de quão rapidamente 1 bilhão de linhas de um arquivo de texto podem ser processadas com Java."
 
-(Desafio disponível em https://lnkd.in/d8_2sUCn)
+(Desafio disponível em https://github.com/gunnarmorling/1brc)
 
-#### - O desafio consiste em processar um arquivo de texto com 1 bilhão linhas no formato "Cidade;temperatura".
+#### O desafio consiste em processar um arquivo de texto com 1 bilhão linhas no formato "Cidade;temperatura".
 Ex: Lodwar;11.1
 
 Wau;31.2

@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-src/main/resources/measurements1.txt
+src/main/resources/measurements.txt

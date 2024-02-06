@@ -16,7 +16,7 @@ public class LeituraArquivoTxtConfig {
     public FlatFileItemReader<ConteudoLinha> leituraArquivoTxt() {
         return new FlatFileItemReaderBuilder<ConteudoLinha>()
                 .name("leituraArquivoTxtReader")
-                .resource(new ClassPathResource("measurements1.txt"))
+                .resource(new ClassPathResource("measurements.txt"))
                 .delimited()
                 .delimiter(";")
                 .names( new String[] {"nomeCidade", "temperatura"})

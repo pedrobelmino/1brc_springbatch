@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class DesafioFinalApplication {
+public class CalculateAverage_lucasnog {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioFinalApplication.class, args);
+		SpringApplication.run(CalculateAverage_lucasnog.class, args);
 	}
 
 }

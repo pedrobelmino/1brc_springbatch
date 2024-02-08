@@ -1,4 +1,4 @@
-package com.mentoria.desafiofinal.job;
+package br.com.pedrobelmino.onebicsv.sbatch.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -17,10 +17,11 @@ public class BatchConfig {
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job processarArquivoDesafio(Step processarArquivoStep) {
-        return jobBuilderFactory.get("processarArquivoDesafio")
+    public Job processarArquivoDesafio(Step processarArquivoStep, Step imprimirStep) {
+        return jobBuilderFactory.get("processarArquivo")
                 .incrementer(new RunIdIncrementer())
                 .start(processarArquivoStep)
+                .next(imprimirStep)
                 .build();
     }
 

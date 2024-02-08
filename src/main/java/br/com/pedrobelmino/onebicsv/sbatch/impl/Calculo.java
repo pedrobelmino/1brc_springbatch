@@ -1,4 +1,4 @@
-package com.mentoria.desafiofinal.impl;
+package br.com.pedrobelmino.onebicsv.sbatch.impl;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 @Data
 public class Calculo {
 
-    Double numMin, numMax, media;
+    private Double numMin, numMax, media;
 
     public Calculo() {
     }

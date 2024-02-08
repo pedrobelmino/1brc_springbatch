@@ -1,22 +1,24 @@
-package com.mentoria.desafiofinal.reader;
+package br.com.pedrobelmino.onebicsv.sbatch.reader;
 
-import com.mentoria.desafiofinal.impl.ConteudoLinha;
+import br.com.pedrobelmino.onebicsv.sbatch.impl.ConteudoLinha;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileUrlResource;
+
+import java.net.MalformedURLException;
 
 @Configuration
-public class LeituraArquivoTxtConfig {
+public class LeituraArquivoConfig {
     @StepScope
     @Bean
-    public FlatFileItemReader<ConteudoLinha> leituraArquivoTxt() {
+    public FlatFileItemReader<ConteudoLinha> leituraArquivo() throws MalformedURLException {
         return new FlatFileItemReaderBuilder<ConteudoLinha>()
                 .name("leituraArquivoTxtReader")
-                .resource(new ClassPathResource("measurements.txt"))
+                .resource(new FileUrlResource("/home/user/dev/measurements.txt"))
                 .delimited()
                 .delimiter(";")
                 .names( new String[] {"nomeCidade", "temperatura"})

@@ -1,4 +1,4 @@
-package com.mentoria.desafiofinal;
+package br.com.pedrobelmino.onebicsv.sbatch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class CalculateAverage_lucasnog {
+public class CalculateAverage {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculateAverage_lucasnog.class, args);
+
+		SpringApplication.exit((SpringApplication.run(CalculateAverage.class, args)));
 	}
 
 }

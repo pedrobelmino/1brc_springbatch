@@ -13,7 +13,6 @@ import java.net.MalformedURLException;
 
 @Configuration
 public class LeituraArquivoConfig {
-    @StepScope
     @Bean
     public FlatFileItemReader<ConteudoLinha> leituraArquivo() throws MalformedURLException {
         return new FlatFileItemReaderBuilder<ConteudoLinha>()
